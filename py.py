@@ -29,12 +29,41 @@ def q55():
     if userGuess == randomNumber:
         print("You Win!")
         return True
+    
     elif userGuess > randomNumber:
         userGuess = int(input("The number is lower than that!\nGuess again\n -->"))
         if userGuess == randomNumber:
             print("You Win!")
             return True
         else:
-            print("You Lose :(")
+            print("You Lose :(\nThe number was", randomNumber)
             return False
         
+    else:
+        userGuess = int(input("The number is greater than that!\nGuess again\n -->"))
+        if userGuess == randomNumber:
+            print("You Win!")
+            return True
+        else:
+            print("You Lose :(\nThe number was", randomNumber)
+            return False
+        
+def q56():
+    '''Guess a random nuber between 1-10, unlimited guesses'''
+    randomNumber = random.randint(1,10)
+    userNumber = int(input("The computer has picked a number from 1 to 10, you have unlimited guesses\n--> "))
+    
+    while userNumber != randomNumber:
+        if userNumber > randomNumber:
+            print("The number is lower than that!")
+        else:
+            print("The number is higher than that!")
+        userNumber = int(input("Try again\n--> "))
+    
+    print("Congratulations!")
+    return True
+
+def q58():
+    '''maths quiz, addition, score out of 5'''
+    
+    
