@@ -77,7 +77,7 @@ def q58():
     print("Your total score out of 5 is", score)
             
 def q59():
-    colorslist = ["red", "orange", "yellow", "green", "blue"]
+    colorlist = ["red", "orange", "yellow", "green", "blue"]
     color = random.choice(colorlist)
     
     match color:
@@ -92,12 +92,15 @@ def q59():
         case "blue":
             hint = "BLUE somehintg"
     
-    inp = 0
-    while inp not in colorlist:
-        inp = input("Pick one of these 5 colors:\nRed, Orange, Yellow, Green, Blue\n--> ").lower()
-    
-    if inp == color:
-        print("Correct!")
-    else:
-        print("Hint -> ", hint)
+    print("Red, Orange, Yellow, Green, Blue")
+    correct = 0
+    while correct == 0:
+        inp = input("Pick one of these 5 colors:\n--> ").lower()
+        
+        if inp == color:
+            print("Correct!")
+            correct = 1
+        else:
+            print("Hint -> ", hint)
+            
         
