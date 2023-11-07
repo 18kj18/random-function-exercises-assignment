@@ -65,5 +65,39 @@ def q56():
 
 def q58():
     '''maths quiz, addition, score out of 5'''
+    score = 0
+    for i in range(0,5):
+        num1 = random.randint(1,100)
+        num2 = random.randint(1,100)
+        if int(input(f"What is the sum of the numbers {num1} and {num2}\n--> ")) == num1 + num2:
+            print("Correct!")
+            score += 1
+        else:
+            print("Incorrect!")
+    print("Your total score out of 5 is", score)
+            
+def q59():
+    colorslist = ["red", "orange", "yellow", "green", "blue"]
+    color = random.choice(colorlist)
     
+    match color:
+        case "red":
+            hint = "something something RED something"
+        case "orange":
+            hint = "something somehting BLUE something"
+        case "yellow":
+            hint = "something YELLOW somehing something"
+        case "green":
+            hint = "GREEN something something"
+        case "blue":
+            hint = "BLUE somehintg"
     
+    inp = 0
+    while inp not in colorlist:
+        inp = input("Pick one of these 5 colors:\nRed, Orange, Yellow, Green, Blue\n--> ").lower()
+    
+    if inp == color:
+        print("Correct!")
+    else:
+        print("Hint -> ", hint)
+        
